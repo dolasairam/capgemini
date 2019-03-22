@@ -17,18 +17,26 @@ class JobSeeker
 
 	public boolean setUserName(StringBuffer userName) {
 		
-		if(userName.length()>8)
-		{
-			userName.append("_job");
-			this.userName=userName;
-			return true;
+		//str=userName.substring(userName.length()-4).toString();
+		if(userName.substring(userName.length()-4).toString().equals("_job"))
+		{	
+			if(userName.length()>12)
+			{
+				userName.append("_job");
+				this.userName=userName;
+				return true;
+			}
+			else
+			{
+				System.out.println("The username is less than 8 characters");
+				return false;
+			}
 		}
-		else
+		else 
 		{
-			System.out.println("The username is less than 8 characters");
+			System.out.println("Username should end wiht _job");
 			return false;
 		}
-		
 	}
 
 	public JobSeeker(StringBuffer userName) {
