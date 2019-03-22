@@ -6,13 +6,10 @@ public class Q5 {
 		char c[]=str.toCharArray();
 		for(int i=0;i<c.length-1;i++)
 		{
-			for(int j=i+1;j<c.length;j++)
-			{
-				if(c[i]>c[j])
+			if(c[i]>c[j])
 				{
 					return false;
 				}
-			}
 		}
 		return true;
 	}
