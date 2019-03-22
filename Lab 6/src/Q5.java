@@ -6,7 +6,7 @@ public class Q5 {
 		char c[]=str.toCharArray();
 		for(int i=0;i<c.length-1;i++)
 		{
-			if(c[i]>c[j])
+			if(c[i]>c[i+1])
 				{
 					return false;
 				}
