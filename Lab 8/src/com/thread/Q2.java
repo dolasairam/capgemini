@@ -1,6 +1,6 @@
 package com.thread;
 //:  Write a thread program to display timer where timer will get refresh after every 10seconds.( Use Runnable implementation )
-public class Q2 implements Runnable{
+class Q2 implements Runnable{
 
 	@Override
 	public void run() {
@@ -10,11 +10,11 @@ public class Q2 implements Runnable{
 		{
 			try {
 				timer++;
-//				System.out.println(timer);
+				System.out.println(timer);
 				Thread.sleep(1000);
 				if(timer%10==0)
 				{
-//					timer=0;
+					timer=0;
 					System.out.println(timer);
 				}
 			} catch (InterruptedException e) {
