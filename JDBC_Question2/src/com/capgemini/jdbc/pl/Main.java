@@ -100,6 +100,11 @@ public class Main {
 			{
 				System.out.println("Author id: "+rs2.getString(1)+"\t"+rs2.getString(2)+"\t"+rs2.getInt(3));
 			}
+			break;
+		default:
+			System.out.println("Wrong input **************bye*************");
+			System.exit(0);
+				
 		}
 		}
 		catch(Exception e)
