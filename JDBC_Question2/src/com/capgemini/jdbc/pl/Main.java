@@ -16,6 +16,8 @@ public class Main {
 		ServiceClass service;
 		System.out.println("1. To add the book in the dataBase ");
 		System.out.println("2. To add a new Author to the database");
+		System.out.println("3. To display all the books of the Author");
+		System.out.println("4. Getting the price of the books when author name is entered");
 		Book book;
 		Author author;
 		Scanner sc = new Scanner(System.in);
@@ -69,6 +71,30 @@ public class Main {
 //			{
 //				System.out.println("Author id: " +rs1.getInt(1)+ "\t" + "Name : " +rs1.getString(2));
 //			}
+		case 3:
+			service = new ServiceClass();
+			rs = service.author();
+			while(rs.next())
+			{
+				System.out.println("Author id: " +rs.getInt(1)+ "\t" + "Name : " +rs.getString(2));
+			}
+			System.out.println("Enter the author id to get books of the author");
+			int id = sc.nextInt();
+			ResultSet rs1=service.getAuthorBooks(id);
+			while(rs1.next())
+			{
+				System.out.println("Author id: "+rs1.getInt(1)+"\t"+rs1.getString(2)+"\t"+rs1.getString(3));
+			}
+			break;
+		case 4:
+			service = new ServiceClass();
+			System.out.println("Enter the author id to get books of the author");
+			String name = sc.next();
+			ResultSet rs2=service.updatingOnAuthorName(name);
+			while(rs2.next())
+			{
+				System.out.println("Author id: "+rs2.getString(1)+"\t"+rs2.getString(2)+"\t"+rs2.getInt(3));
+			}
 		}
 		}
 		catch(Exception e)

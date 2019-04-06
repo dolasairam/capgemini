@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.naming.spi.DirStateFactory.Result;
+
 import com.capgemini.jdbc.beam.Author;
 import com.capgemini.jdbc.beam.Book;
 import com.capgemini.jdbc.utility.AuthorUtility;
@@ -55,5 +57,16 @@ public class DaoClass implements DaoInterface {
 		}
 		return list;
 	}
+	
+	public ResultSet getAuthorsBooks(int id)
+	{
+		au = new AuthorUtility();
+		return au.bookAuthor(id);
+	}
 
+	public ResultSet updatingOnAuthorName(String name)
+	{
+		au=new AuthorUtility();
+		return au.updatingOnAuthorName(name);
+	}
 }

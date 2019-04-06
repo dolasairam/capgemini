@@ -6,6 +6,7 @@ import java.util.List;
 import com.capgemini.jdbc.beam.Author;
 import com.capgemini.jdbc.beam.Book;
 import com.capgemini.jdbc.dao.DaoClass;
+import com.capgemini.jdbc.utility.AuthorUtility;
 
 public class ServiceClass implements ServiceInterface {
 
@@ -49,6 +50,33 @@ public class ServiceClass implements ServiceInterface {
 			return true;
 		}
 		return false;
+	}
+	
+	public ResultSet getAuthorBooks(int id)
+	{
+		dc = new DaoClass();
+		if(checkValid(id))
+		{
+			return dc.getAuthorsBooks(id);
+		}
+		else
+			
+		{
+			try
+			{
+				throw new AuthorException();
+			}
+			catch(AuthorException e)
+			{
+				e.notFound();
+			}
+		}
+		return null;
+	}
+	public ResultSet updatingOnAuthorName(String name)
+	{
+		dc=new DaoClass();
+		return dc.updatingOnAuthorName(name);
 	}
 
 }
