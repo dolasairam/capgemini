@@ -9,7 +9,11 @@ import java.sql.Statement;
 
 import com.capgemini.jdbc.beam.Author;
 import com.capgemini.jdbc.beam.Book;
-
+/**
+ * 
+ * @author DOLA SAI RAM
+ *
+ */
 public class AuthorUtility {
 	static Connection com;
 	static

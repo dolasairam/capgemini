@@ -11,7 +11,11 @@ import javax.naming.spi.DirStateFactory.Result;
 import com.capgemini.jdbc.beam.Author;
 import com.capgemini.jdbc.beam.Book;
 import com.capgemini.jdbc.utility.AuthorUtility;
-
+/**
+ * 
+ * @author DOLA SAI RAM
+ *
+ */
 public class DaoClass implements DaoInterface {
 
 	AuthorUtility au;
