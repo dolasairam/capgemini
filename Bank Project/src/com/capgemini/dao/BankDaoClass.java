@@ -42,7 +42,6 @@ public class BankDaoClass implements BankDaoInterface {
 		{
 			if(a.getAccountId().equals(accountId) && amount>0)
 			{
-				{
 //					Transaction t = new Transaction();
 					t = new Transaction();
 					t.setAccountId(accountId);
@@ -50,7 +49,6 @@ public class BankDaoClass implements BankDaoInterface {
 					t.setD(new Date());
 					t.setType("Deposit");
 					transaction.add(t);
-				}
 				updateAmount =a.getBalance()+amount;
 				a.setBalance(updateAmount);
 				return "success";
@@ -77,10 +75,11 @@ public class BankDaoClass implements BankDaoInterface {
 					t.setD(new Date());
 					t.setType("Withdraw");
 					transaction.add(t);
+					updateAmount = a.getBalance()-amount;
+					a.setBalance(updateAmount);
+					return "success";
 				}
-				updateAmount = a.getBalance()-amount;
-				a.setBalance(updateAmount);
-				return "success";
+				
 			}
 			}
 		}
