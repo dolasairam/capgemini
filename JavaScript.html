@@ -1,0 +1,81 @@
+<html>
+<head>
+	<title>JS Starter</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// alert("We are just starting to know JS...");
+	//Print something on te console
+	console.log("A Sample message throough JS");
+
+	function add(a, b){
+		alert("Addition : " + (a + b));
+
+		for(var a = 4; a < 14; a++){
+			// document.getElementById("textDiv").innerHTML = new Date();
+		}
+
+
+	}
+
+	function displayClock(){
+		//Display the clock after 3 seconds
+	// setTimeout(function(){showDate()}, 3000);
+
+	setInterval(function(){showDate()}, 1000);
+
+	}
+
+	function showDate(){
+		document.getElementById("textDiv").innerHTML = new Date().toLocaleTimeString();
+	}
+
+
+	function getName()
+	{
+
+		add(67, 89);
+		var userInput = document.getElementById("userNameInput").value;
+
+		//Check for a valid name
+		if(!isNaN(userInput)){
+			alert("Please enter the right name");
+		}
+
+		// alert("Welcome " + document.getElementById("userNameInput").value);
+	}
+
+	// Declaring a variable: js style
+	var flag = 0;
+
+	// create a function which counts the no. of button clicks
+	function countClicks(){
+		
+
+		flag++;
+		// flag = "CG";
+
+		document.getElementById("textDiv").innerHTML = flag;
+	}
+
+	// Create a function
+	function changeText(){
+		// alert("Running JS...");
+		//Get a hold over the division:#textDiv
+		// alert(document.getElementById("textDiv").innerHTML);
+		document.getElementById("textDiv").innerHTML += "Was changed dynamically through JS...";
+	}
+
+	</script>
+
+	<div id="textDiv">
+		Welcome to LPU
+	</div>
+	<button onclick="changeText();">SHow Some Text...</button><br>
+	<button onclick="countClicks();">Count Button Clicks</button>
+	<input type="text" id="userNameInput" placeholder="Your Name">
+	<br><button onclick="getName();">Get Name</button>
+	<br><button onclick="add(78,12);">Add</button>
+	<button onclick="displayClock();">Display Date</button>
+</body>
+</html>

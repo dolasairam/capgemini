@@ -1,7 +1,6 @@
 package com.capgemini.pl;
 
 import java.io.Console;
-import java.sql.ResultSet;
 import java.util.Scanner;
 
 import com.capgemini.bean.Account;
@@ -66,23 +65,19 @@ public class Main {
 						continue;
 					}
 					String c=bsc.addAccount(account);
-					if(c.equalsIgnoreCase("Not added") || c.equalsIgnoreCase("invalid"))
-					{
-						System.out.println(c);
-					}
-					else
-					{
-						System.out.println(account.getFirstName());
-						System.out.println(c);
-					}
+					System.out.println(c);
+					
 					break;
 				case 2:
 					bsc = new BankServiceClass();
 					System.out.println("Enter the account id");
 					Long id = sc.nextLong();
-					System.out.println("Enter the password");
-					String pass = sc.next();
-					boolean flag=bsc.validate(id, pass);
+					boolean flag=bsc.checkUniqueId(id);
+					if(flag)
+					{
+						System.out.println("Enter the password");
+						String pass = sc.next();
+						
 						if(bsc.checkAccount(id, pass))
 						{
 							a:
@@ -127,12 +122,7 @@ public class Main {
 								}
 								break;
 							case 5:
-								ResultSet rs = bsc.printTransaction(id);
-								while(rs.next())
-								{
-									System.out.print(rs.getTimestamp(3)+" "+rs.getString(2)+" "+"\n");
-								}
-								System.out.println("Total Balance is "+ bsc.showBalance(id));
+								bsc.printTransaction(id);
 								break;
 							case 6:
 								break a;
@@ -141,6 +131,7 @@ public class Main {
 							}
 							}
 						}
+					}
 					else
 					{
 						System.out.println("Invalid");
