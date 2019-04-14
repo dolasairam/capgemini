@@ -7,10 +7,10 @@
 
 	function add(){
 		var a = parseInt(document.getElementById("id1").value);
-
 		var b = parseInt(document.getElementById("id2").value);
-		alert(a+b);
-	}
+		var c = a+b;
+		document.write(a+b);
+		}
 
 </script>
 <form>
@@ -18,5 +18,7 @@
 	b <input type="number" id="id2">
 	<input type="submit" value="go" onclick="add();">
 </form>
+<p id="add"> </p>
+
 </body>
-</html>
+</html>6
