@@ -1,0 +1,81 @@
+<h2>Angular Operations</h2>
+<h4>Add Employee</h4>
+ <p *ngIf="msg">
+   {{msg}}
+ </p>
+<form [formGroup]="myForm">
+<table class="table">
+  <tr>
+    <td>Id*</td>
+    <td><input type="text" formControlName="id"></td>
+  </tr>
+  <tr>
+    <td>Name*</td>
+    <td><input type="text" formControlName="name"></td>
+  </tr>
+  <tr>
+    <td>Salary*</td>
+    <td><input type="text" formControlName="salary"></td>
+  </tr>
+  <tr>
+    <td>Department*</td>
+    <td><input type="text" formControlName="department"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><input type="button" value="Add Employee" (click)="data()" [disabled]="myForm.invalid"></td>
+  </tr>
+</table>
+</form>
+<table class="table" *ngIf="myArr.length>0">
+  <tr>
+    <th>ID</th>
+    <th>NAME</th>
+    <TH>SALARY</TH>
+    <th>DEPARTMENT</th>
+    <th>ACTION</th>
+  </tr>
+  <tr *ngFor="let d of myArr">
+    <td>{{d.id}}</td>
+    <td>{{d.name}}</td>
+    <td>{{d.salary}}</td>
+    <td>{{d.department}}</td>
+    <td> <input type="button" value="Update" (click)="up(d)">
+     <input type="button" value="Delete" (click)="del(d)"></td>
+  </tr>
+</table>
+<form [formGroup]="myForm2">
+  <table class="table" *ngIf="counter>0">
+    <tr>
+      <td>Id*</td>
+      <td><input type="text" formControlName="id"></td>
+    </tr>
+    <tr>
+      <td>Name*</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td>Salary*</td>
+      <td><input type="text" formControlName="salary"></td>
+    </tr>
+    <tr>
+      <td>Department*</td>
+      <td><input type="text" formControlName="department"></td>
+    </tr>
+    <tr>
+      <td colspan="2"><input type="button" value="Update Employee" (click)="updata()" [disabled]="myForm2.invalid"></td>
+    </tr>
+  </table>
+  </form>
+  
+
+
+
+
+
+
+
+
+
+
+
+

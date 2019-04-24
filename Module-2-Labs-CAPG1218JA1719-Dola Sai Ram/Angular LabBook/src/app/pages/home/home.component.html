@@ -1,0 +1,22 @@
+<h1>Book Details (Search Only By Author)</h1>
+<input type="text" [(ngModel)]="orderInput">
+<table border=2>
+  <tr>
+    <th>Book Id </th>
+    <th>Book Title</th>
+    <th>Book Auther</th>
+    <th>Book Year of Publish</th>
+  </tr>
+  <tr>
+    <th><input type="text" [(ngModel)]="query2" ></th>
+    <th><input type="text" [(ngModel)]="query1"></th>
+    <th><input type="text" [(ngModel)]="query"></th>
+    <th><input type="text" [(ngModel)]="query3"></th>
+  </tr>
+  <tr *ngFor="let book of bookData|search:query:'author'|search:query1:'title'|sort:orderInput|search:query2:'id'|search:query3:'year'">
+    <td>{{book.id}}</td>
+    <td>{{book.title}}</td>
+    <td>{{book.author}}</td>
+    <td>{{book.year}}</td>
+  </tr>
+</table>

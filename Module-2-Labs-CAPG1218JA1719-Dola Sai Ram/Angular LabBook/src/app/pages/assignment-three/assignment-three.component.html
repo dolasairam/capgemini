@@ -1,0 +1,35 @@
+<form [formGroup]="myForm">
+  <table class="table">
+    <tr>
+      <td>Product Id</td>
+      <td><input type="text" formControlName="pid"></td>
+    </tr>
+    <tr>
+      <td>Product Name</td>
+      <td><input type="text" formControlName="pname"></td>
+    </tr>
+    <tr>
+      <td>Product Cost</td>
+      <td><input type="text" formControlName="pcost"></td>
+    </tr>
+    <tr>
+      <td>Product Online</td>
+      <td><input type="radio" formControlName="po" value="yes">Yes
+        <input type="radio" formControlName="po" value="no">No</td>
+    </tr>
+    <tr>
+      <td>Product Category</td>
+      <td><select formControlName="pcat">
+          <option value="grocery">Grocery</option>
+          <option value="mobile">Mobile</option>
+          <option value="electronics">Electronics</option>
+          <option value="cloths">Cloths</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2"><input type="button" value="Add Product"  [disabled]="myForm.invalid" (click)="fun1()"></td>
+    </tr>
+  </table>
+  </form>
+  

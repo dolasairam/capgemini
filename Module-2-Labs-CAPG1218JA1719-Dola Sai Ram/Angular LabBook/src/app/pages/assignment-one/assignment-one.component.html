@@ -1,0 +1,30 @@
+<h2>Angular Operations</h2>
+<table class="table">
+  <tr>
+    <td>Id</td>
+    <td><input type="text" [(ngModel)]="id"></td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td><input type="text" [(ngModel)]="name"></td>
+  </tr>
+  <tr>
+    <td>Salary</td>
+    <td><input type="text" [(ngModel)]="salary"></td>
+  </tr>
+  <tr>
+    <td>Department</td>
+    <td><input type="text" [(ngModel)]="department"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><input type="button" value="Add Employee" (click)="data()"></td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td>{{id}}</td>
+    <td>{{name}}</td>
+    <td>{{salary}}</td>
+    <td>{{department}}</td>
+  </tr>
+</table>

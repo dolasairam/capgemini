@@ -1,0 +1,17 @@
+<p>
+  httpdata works!
+</p>
+<table class="table">
+  <tr>
+    <th>BookId</th>
+    <th>Book title</th>
+    <th>Book Author</th>
+    <th>Book year</th>
+  </tr>
+  <tr *ngFor="let r of resData">
+      <th>{{r.id}}</th>
+      <th>{{r.title}}</th>
+      <th>{{r.author}}</th>
+      <th>{{r.year}}</th>
+    </tr>
+</table>
